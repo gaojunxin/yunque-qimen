@@ -1,6 +1,7 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <h1>云雀奇门遁甲排盘</h1>
+     <p>这是一个三维模型构建的奇门遁甲排盘软件</p>
   </div>
 </template>
 

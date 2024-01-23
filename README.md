@@ -34,6 +34,10 @@ npm run build
 
 需要生成的字：休生伤杜景死惊开蓬任冲辅英芮柱心天值符螣蛇太阴六合白虎玄武九地九天
 
+## 演示
+
+https://gaojunxin.github.io/yunque-qimen/
+
 ## 界面截图
 ![image.png](http://image.gaojunxin.cn/i/2024/01/23/65af25bd04b4b.png)
 
@@ -42,5 +46,3 @@ npm run build
 
 ## 参与讨论
 非常欢迎大家的思路和建议。 
-
-
