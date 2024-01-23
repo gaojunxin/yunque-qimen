@@ -5,6 +5,7 @@ import { FontLoader } from 'three/examples/jsm/loaders/FontLoader'
 import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
 import { gsap } from "gsap";
 import { onMounted, ref } from 'vue';
+import fonts from '../assets/fonts.json';
 // Canvas
 const canvas = ref();
 
@@ -17,21 +18,22 @@ onMounted(() => {
   //----------------------
 
   const fontLoader = new FontLoader();
-  const fontUrl =
-    "fonts.json";
+  const fontUrl = "fonts.json";
   let font;
   const loadFont = new Promise((resolve, reject) => {
-    fontLoader.load(
-      fontUrl,
-      function (loadedFont) {
-        font = loadedFont;
-        resolve();
-      },
-      undefined,
-      function (err) {
-        reject(err);
-      }
-    );
+    // fontLoader.load(
+    //   fontUrl,
+    //   function (loadedFont) {
+    //     font = loadedFont;
+    //     resolve();
+    //   },
+    //   undefined,
+    //   function (err) {
+    //     reject(err);
+    //   }
+    // );
+    font = fontLoader.parse(fonts);
+    resolve();
   });
   const text = {
     五行: ["金", "木", "水", "火", "土"],
