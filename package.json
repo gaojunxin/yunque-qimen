@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:github": "vite build --base=/yunque-qimen"
   },
   "dependencies": {
     "gsap": "^3.12.4",
