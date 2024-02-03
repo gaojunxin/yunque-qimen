@@ -1,1 +1,0 @@
-import{_ as o,c as t,o as s,a as e}from"./index-zQPphB7y.js";const c={},_={class:"about"},n=e("h1",null,"云雀奇门遁甲排盘",-1),a=e("p",null,"这是一个三维模型构建的奇门遁甲排盘软件",-1),r=[n,a];function d(i,l){return s(),t("div",_,r)}const f=o(c,[["render",d]]);export{f as default};
