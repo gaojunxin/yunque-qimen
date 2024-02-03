@@ -10,6 +10,9 @@
     "build:github": "vite build --base=/yunque-qimen"
   },
   "dependencies": {
+    "ant-design-vue": "^4.1.2",
+    "big-integer": "^1.6.52",
+    "dayjs": "^1.11.10",
     "gsap": "^3.12.4",
     "pinia": "^2.1.7",
     "three": "^0.160.0",

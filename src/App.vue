@@ -7,6 +7,7 @@ import { RouterLink, RouterView } from 'vue-router'
     <div class="wrapper">
       <nav>
         <RouterLink to="/home">首页</RouterLink>
+        <RouterLink to="/qimen">奇门</RouterLink>
         <RouterLink to="/about">关于</RouterLink>
       </nav>
     </div>
@@ -27,7 +28,7 @@ header {
 }
 
 nav {
-  width: 100%;
+  width: 100px;
   font-size: 12px;
   text-align: center;
   margin-top: 2rem;
@@ -42,7 +43,7 @@ nav a.router-link-exact-active:hover {
 }
 
 nav a {
-  display: inline-block;
+  display: block;
   padding: 0 1rem;
   border-left: 1px solid var(--color-border);
 }
