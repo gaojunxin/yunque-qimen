@@ -44,7 +44,7 @@ https://gaojunxin.github.io/yunque-qimen/
 ## 界面截图
 ![image.png](http://image.gaojunxin.cn/i/2024/01/23/65af25bd04b4b.png)
 
-![image.png](http://image.gaojunxin.cn/i/2024/03/18/65f7a67374c8f.png)
+![image.png](http://image.gaojunxin.cn/i/2024/03/18/65f7a710ca142.png)
 
 ![image.png](http://image.gaojunxin.cn/i/2024/03/18/65f7a2fc64546.png)
 ## 参与讨论
