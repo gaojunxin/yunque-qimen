@@ -1,8 +1,11 @@
 # 云雀奇门遁甲排盘
 
-本项目希望通过三维模型的方式来构建奇门遁甲排盘软件。
+因为业余对气门遁甲感兴趣，正好也需要一个vue项目来练手，就有了开发一个气门遁甲排盘软件的想法。
 
-技术栈：
+项目目标是实现一个类似袁天罡气门排盘的3D效果，前期先实现九宫格排盘。
+
+
+## 技术栈
 vue3
 vite
 threejs
@@ -43,6 +46,6 @@ https://gaojunxin.github.io/yunque-qimen/
 
 ![image.png](http://image.gaojunxin.cn/i/2024/01/23/65af25e78e0f8.png)
 
-
+![image.png](http://image.gaojunxin.cn/i/2024/03/18/65f7a2fc64546.png)
 ## 参与讨论
 非常欢迎大家的思路和建议。 
