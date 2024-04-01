@@ -16,22 +16,15 @@ import { RouterLink, RouterView } from 'vue-router'
   <RouterView />
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
+<style>
 .logo {
   display: block;
   margin: 0 auto 2rem;
 }
 
 nav {
-  width: 100px;
   font-size: 12px;
   text-align: center;
-  margin-top: 2rem;
 }
 
 nav a.router-link-exact-active {
@@ -77,4 +70,27 @@ nav a:first-of-type {
     margin-top: 1rem;
   }
 }
+
+@media screen and (max-width: 767px) {
+  header {
+    display: flex;
+    place-items: center;
+    padding: 10px 0;
+  }
+
+  .logo {
+    margin: 0 2rem 0 0;
+  }
+
+  header .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  nav {
+    font-size: 1rem;
+    display: flex;
+  }
+}
+
 </style>

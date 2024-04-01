@@ -495,7 +495,7 @@ onMounted(() => {
 
   //Sizes
   const sizes = {
-    width: window.innerWidth - 180,
+    width: window.innerWidth < 767 ? window.innerWidth:  window.innerWidth - 180,
     height: window.innerHeight,
   };
 

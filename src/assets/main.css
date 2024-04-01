@@ -2,7 +2,6 @@
 
 #app {
   /* margin: 0 auto; */
-  padding: 2rem;
   font-weight: normal;
 }
 
@@ -32,3 +31,18 @@ a,
     padding: 0 2rem;
   }
 }
+
+/* 媒体查询，针对小屏幕设备 */
+@media screen and (max-width: 767px) {
+  body {
+    display: flex;
+  }
+
+  #app {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+}
+
