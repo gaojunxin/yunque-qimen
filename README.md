@@ -4,6 +4,7 @@
 
 项目目标是实现一个类似袁天罡气门排盘的3D效果，前期先实现九宫格排盘。
 
+我的博客：[www.gaojunxin.cn](https://www.gaojunxin.cn)
 
 ## 技术栈
 vue3
