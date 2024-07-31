@@ -76,7 +76,6 @@ function paipan() {
     if(dateValue.value){
         const date = dateValue.value;
         const time = timeValue.value;
-        console.log(date.year(), date.month()+1, date.date(), time.hour());
         store.setPanData(new Qimen(date.year(), date.month()+1, date.date(), time.hour()).p);
     }else{
         store.setPanData(new Qimen(2023, 12, 24, 6).p);

@@ -10,13 +10,20 @@ class Qimen {
     this.p = {
       干支:
         this.gangzhi()[0] +
-        "年" +
+        "年 " +
         this.gangzhi()[1] +
-        "月" +
+        "月 " +
         this.gangzhi()[2] +
-        "日" +
+        "日 " +
         this.gangzhi()[3] +
-        "時",
+        "時 ",
+      干支1:
+      {
+        "年": this.gangzhi()[0],
+        "月": this.gangzhi()[1],
+        "日": this.gangzhi()[2],
+        "時": this.gangzhi()[3],
+      },
       旬首: this.xun(),
       旬空: this.daykong_shikong(),
       局日: this.qimen_ju_day(),
@@ -29,6 +36,7 @@ class Qimen {
       門: this.pan_door(),
       星: this.pan_star()[0],
       神: this.pan_god(),
+      暗干: this.pan_angan(),
       馬星: {
         天馬: this.moonhorse(),
         丁馬: this.dinhorse(),
@@ -426,6 +434,28 @@ class Qimen {
       gong_reorder = Config.new_list(rotate, starting_gong);
     }
     return Config.zip_dict(gong_reorder, god_order);
+  }
+
+  // 暗干
+  pan_angan() {
+    let gans = Config.yingyang_order['陽遁'];
+    let starting_gong = this.zhifu_n_zhishi()["值使門宮"][1];
+    let tianpan = this.pan_earth()[0];
+    let rotate = {
+      陽: Config.eight_gua,
+      陰: Config.eight_gua.slice().reverse(),
+    }[this.qimen_ju_name()[0]];
+    let gong_reorder = [];
+    let angan_reorder = [];
+    let shigan = this.gangzhi()[3][0]
+    if (shigan == tianpan[starting_gong]) {
+      gong_reorder = Config.new_list(rotate, "中");
+    } else {
+      gong_reorder = Config.new_list(rotate, starting_gong);
+    }
+   
+    angan_reorder = Config.new_list(gans, shigan);
+    return Config.zip_dict(gong_reorder, angan_reorder);
   }
 
   //丁馬

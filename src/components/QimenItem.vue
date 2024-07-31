@@ -1,13 +1,14 @@
 <template>
     <div class="wrapper">
         <div class="wrapper-item">
-            <span class="placeholder">{{ viewData.暗干 }}</span>
+            <span >{{ viewData.暗干 }}</span>
             <span>{{ viewData.八神 }}</span>
             <span class="placeholder">空</span>
         </div>
         <div class="wrapper-item">
             <span class="placeholder">空 </span>
-            <span style="font-size: 24px;" :style="{ color: getFontColor('八门', viewData.八门) }">{{ viewData.八门 }}</span>
+            <span v-if="viewData.八门" style="font-size: 24px;" :style="{ color: getFontColor('八门', viewData.八门) }">{{ viewData.八门 }}</span>
+            <span v-else style="font-size: 24px;" :style="{ color: getFontColor('八门', viewData.八门) }" class="placeholder">空</span>
             <span class="placeholder"> 马</span>
         </div>
         <div class="wrapper-item">
@@ -111,7 +112,6 @@ function getFontColor(type, value) {
 /** 占位 */
 .placeholder {
     visibility: hidden;
-    height: 0;
     margin: 0;
 }
 </style>
