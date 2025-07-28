@@ -212,7 +212,7 @@ let WanNianLi = (function () {
    * @param {Object} month
    * @param {Object} date
    */
-  function getRiGan(year, month, date) {
+  function getRiGan(year, month, date, hour, checkZishi) {
     year = Number(year);
     let s = (year % 100) - 1,
       u = s % 4,
@@ -226,6 +226,10 @@ let WanNianLi = (function () {
     }
     r %= 60;
     r === 0 && (r = 60);
+
+    if (checkZishi && hour >= 23 ) {
+      return r + 1;      
+    }
     return r;
   }
   /**
@@ -342,7 +346,7 @@ let WanNianLi = (function () {
       __wuxing.month += __WuXing[y2];
 
       //日干及日支。采用高氏日柱公式，得到日期在甲子表中的序号
-      serial = getRiGan(date.cYear, date.cMonth, date.cDay);
+      serial = getRiGan(date.cYear, date.cMonth, date.cDay, date.hour, true);
       riGan = __JiaZi[serial];
       riGanIndex = __TianGan.indexOf(riGan.slice(0, 1));
       __bazi.date = riGan;
@@ -353,7 +357,10 @@ let WanNianLi = (function () {
       __bazi.hour = __ShiGanZhi[shiZhiIndex];
       __wuxing.hour = __WuXing[__bazi.hour];
       //时干
-      shiGanIndex = getShiGanIndex(riGanIndex, shiZhiIndex);
+      const serial1 = getRiGan(date.cYear, date.cMonth, date.cDay, date.hour, false);
+      const riGan1 = __JiaZi[serial1];
+      const riGanIndex1 = __TianGan.indexOf(riGan1.slice(0, 1));
+      shiGanIndex = getShiGanIndex(riGanIndex1, shiZhiIndex);
       __bazi.hour = __TianGan[shiGanIndex] + __bazi.hour;
       __wuxing.hour = __WuXing[__TianGan[shiGanIndex]] + __wuxing.hour;
 
