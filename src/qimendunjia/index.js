@@ -438,23 +438,39 @@ class Qimen {
 
   // 暗干
   pan_angan() {
-    let gans = Config.yingyang_order['陽遁'];
-    let starting_gong = this.zhifu_n_zhishi()["值使門宮"][1];
-    let tianpan = this.pan_earth()[0];
+    // 根据当前局的阴阳遁确定天干顺序
+    let yingyang = this.qimen_ju_name().slice(0, 2);
+    let gans = Config.yingyang_order[yingyang];
+    
+    // 从值符所在的宫位开始排列
+    let zhifu_gong = this.zhifu_n_zhishi()["值符星宮"][1];
+    
+    // 确定旋转方向
     let rotate = {
-      陽: Config.eight_gua,
-      陰: Config.eight_gua.slice().reverse(),
-    }[this.qimen_ju_name()[0]];
-    let gong_reorder = [];
-    let angan_reorder = [];
-    let shigan = this.gangzhi()[3][0]
-    if (shigan == tianpan[starting_gong]) {
-      gong_reorder = Config.new_list(rotate, "中");
-    } else {
-      gong_reorder = Config.new_list(rotate, starting_gong);
+      陽遁: Config.clockwise_eightgua,
+      陰遁: Config.anti_clockwise_eightgua,
+    }[yingyang];
+    
+    // 时干
+    let shigan = this.gangzhi()[3][0];
+    
+    // 获取地盘信息
+    let dipan = this.pan_earth()[0];
+    
+    // 确定起始宫位
+    let start_gong = zhifu_gong;
+    // 特殊情况：当时干与值符落宫地盘干相同时，起始位置调整
+    if (shigan == dipan[zhifu_gong]) {
+      // 找到中宫在旋转序列中的位置，从该位置开始
+      let zhong_index = rotate.indexOf("中");
+      if (zhong_index !== -1) {
+        start_gong = "中";
+      }
     }
-   
-    angan_reorder = Config.new_list(gans, shigan);
+    
+    let gong_reorder = Config.new_list(rotate, start_gong);
+    let angan_reorder = Config.new_list(gans, shigan);
+    
     return Config.zip_dict(gong_reorder, angan_reorder);
   }
 
