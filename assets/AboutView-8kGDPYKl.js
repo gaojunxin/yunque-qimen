@@ -1,1 +1,0 @@
-import{o as _,c as r,a as c}from"./index-D2Rtv3dh.js";const a=(t,o)=>{const e=t.__vccOpts||t;for(const[s,n]of o)e[s]=n;return e},l={},d={class:"about"},i=c("h1",null,"云雀奇门遁甲排盘",-1),u=c("p",null,"这是一个三维模型构建的奇门遁甲排盘软件",-1),f=[i,u];function h(t,o){return _(),r("div",d,f)}const m=a(l,[["render",h]]);export{m as default};
